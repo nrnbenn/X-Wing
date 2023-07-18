@@ -11,4 +11,8 @@ Make attack and defend defs in ship class
 
 Do Upgrades
 
+Make damage deck object
+
+Add definitions in ship class that do things when they take a damage card/crit
+
 v = done
