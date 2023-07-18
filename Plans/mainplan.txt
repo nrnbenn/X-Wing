@@ -1,0 +1,232 @@
+Import modules
+
+#create button press vars
+1 = none
+2 = none
+3 = none
+4 = none
+5 = none
+6 = none
+7 = none
+8 = none
+9 = none
+
+All button press list = 1, 2, 3, 4, 5, 6, 7, 8, 9
+
+
+
+
+Def Redraw All(Except):
+	Take Except off all list
+Reblit board
+	Everyone on all list call redraw(except) function
+
+
+	
+
+
+Class Dial:
+	Init:	
+		Add to all list
+		Set Type to Dial
+		Set Assigned_Ship
+		Create ID
+		Create List of possible maneuvers
+		Load necessary image to starting image
+		Set display_image to starting image
+Set self.player var to player ½
+Draw()
+
+
+def Check Click:
+If click in rect:
+If Phase == Planning and SubPhase == player:
+	Rotate display image
+	Change Maneuver var
+Draw()
+
+	Def Draw:
+		Blit display image
+		Update Screen
+
+	Def Redraw(Except):
+		If Except = self.id
+			Pass
+		Else
+			Draw()
+
+
+Class Token:
+	Init:
+		Add to all list
+Set ID
+Set type to None
+Load Image
+		Set Rect
+		
+
+	Def Rolled Attack Dice(amount, results)
+		If type == Focus:
+			Focus_attack(amount, results)
+		If type == Target Lock:
+			Target Lock()
+
+		
+Def Focus_attack(amount, results):
+	Focuses on dice = results.count(“Focus”)
+	
+	If Focuses on dice > 0:
+		Self.resultstostore = results
+		1 = Focus_yes
+		2 = Focus_no
+Show gui
+
+Def Focus_yes():
+For i in range(len(self.resultstostore))
+If resultstostore[i-1] == Focus:
+resultstostore[i-1] = Hit
+
+Redraw All(Self)
+
+1 = none
+2 = none
+3 = none
+4 = none
+5 = none
+6 = none
+7 = none
+8 = none
+9 = none	
+	
+	Def Focus_no():
+		Redraw All(None)
+
+1 = none
+2 = none
+3 = none
+4 = none
+5 = none
+6 = none
+7 = none
+8 = none
+9 = none
+
+
+	Def Draw:
+		Blit Onto Screen
+		Update Screen
+	
+	Def Redraw(Except):
+		If Except = self.id
+			Pass
+		Else
+			Draw()
+	
+
+Class Ship():
+	Def init():
+		Add to all list
+load stats from JSON
+		Set ship id
+		Set player to player ½ 
+		Load image to starting image
+		Display image = starting image
+		Dial = create appropriate dial class
+		Initiation = Initiation
+		Create upgrades list which will be added to at a later date
+		Create Action List of Action Definitions
+		Create tokens list
+		
+		
+
+		
+		
+	
+	Def action():
+		Show action GUI
+
+		For i in range len(actionlist):
+			All button press[i-1] = action list[i-1]
+
+	Def takeFocus():
+		Tokens list.append(token)
+		Tokens list[len(tokenslist)-1].Type = Focus
+
+		Redraw All(none)
+
+		1 = none
+2 = none
+3 = none
+4 = none
+5 = none
+6 = none
+7 = none
+8 = none
+9 = none
+
+	Def takeTarget Lock():
+		Tokens list.append(token)
+		Tokens list[len(tokenslist) - 1].Type = Target Lock
+
+		Redraw All(none)
+
+		1 = none
+2 = none
+3 = none
+4 = none
+5 = none
+6 = none
+7 = none
+8 = none
+9 = none
+
+	Def takeEvade():
+		Tokens list.append(token)
+		Tokens list[len(tokenslist) - 1].Type = Evade
+
+		Redraw All(none)
+
+		1 = none
+2 = none
+3 = none
+4 = none
+5 = none
+6 = none
+7 = none
+8 = none
+9 = none
+
+
+
+	Def Draw:
+		Blit display image
+		Update Screen
+
+	Def Redraw(Except):
+		If Except = self.id
+			Pass
+		Else
+			Draw()
+		
+
+		
+ 
+
+Blit board
+
+Get and decode the xws data from each player and add to a tuple
+
+Create ship objects and add upgrade objects based on tuple
+
+Create Dial and Token objects
+
+Game loop:
+On click():
+All objects check click
+
+On button pressed:
+	All objects perform 1() 2() 3() 4() 5() 6() 7() 8() 9() depending on button
+
+quit()
+
+

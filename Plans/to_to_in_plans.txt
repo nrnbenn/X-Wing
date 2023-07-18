@@ -1,0 +1,14 @@
+To Do
+
+
+Add all actions to ship class: Focus v, Target Lock v, Barrel Roll, Boost, Evade v, Cloak, Reinforce, Coordinate, Jam, Reload, Lock S-Foils, Slam, Rotate Turret,
+
+Finish token class with what happens if it has been assigned
+
+Do Ship maneuvers
+
+Make attack and defend defs in ship class
+
+Do Upgrades
+
+v = done
